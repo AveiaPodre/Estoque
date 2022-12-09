@@ -6,6 +6,12 @@ public class Estoque {
     private ArrayList<Produto> produtos = new ArrayList<>();
 
     public void incluir(Produto p) {
+        for (Produto produto: produtos) {
+            if (produto.getCodigo() == p.getCodigo()) {
+                return;
+            }
+        }
+
         this.produtos.add(p);
     }
 
