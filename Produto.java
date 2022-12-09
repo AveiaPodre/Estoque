@@ -11,7 +11,6 @@ public class Produto {
 
     private Fornecedor fornecedor;
 
-    //o codigo do produto novo não pode ser igual ao de um ja existente
     public Produto(int cod, String desc, int min, double lucro, Fornecedor forn){
         this.codigo = cod;
         this.descricao = desc;
