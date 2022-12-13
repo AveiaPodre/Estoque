@@ -46,7 +46,7 @@ public class Estoque {
 
     public Fornecedor fornecedor(int cod) {
         for (Produto produto : produtos) {
-            if (produto.getFornecedor().getCnpj() == cod) {
+            if (produto.getCodigo() == cod) {
                 return produto.getFornecedor();
             }
         }
@@ -54,7 +54,7 @@ public class Estoque {
         return null;
     }
 
-    public ArrayList<Produto> estoqueAbaixoDoMinimo() {
+    public Produto[] estoqueAbaixoDoMinimo() {
         ArrayList<Produto> produtosAbaixoDoMinimo = new ArrayList<>();
 
         for (Produto produto : produtos) {
@@ -63,6 +63,6 @@ public class Estoque {
             }
         }
 
-        return produtosAbaixoDoMinimo;
+        return produtosAbaixoDoMinimo.toArray(new Produto[produtosAbaixoDoMinimo.size()]);
     }
 }
